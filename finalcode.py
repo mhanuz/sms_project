@@ -34,7 +34,7 @@ def Update_Sec():
     return current_Sec
 
 # assign twilio client
-client = Client('AC58116279b81f5fa202edadc3eed8e15a', "5a82a3c9abe73b342e31a979f852eba3")
+client = Client('YOUR_ACCOUNT_SID', 'YOUR_AUTH_TOKEN')
 
 while (True):
 
@@ -65,8 +65,9 @@ while (True):
                 print("Time Matched")
                 client.messages.create(
                     body=f'Hi,{name_key[i]}, Greetings from our site.... have a nice day',
-                    from_='+19376331061',
-                    to='+8801957060587'
+                    from_='YOUR_TRIAL_NUMBER', # they will provide you a trial number to send sms thorought this number
+                    to='VERIFIED_NUMBER' # You can use your phone number that you used for creating twilio account 
+                    # You can use any mobile number if you choose any plan, free account does not allow all number 
                 )
                 time.sleep(2) # keep watting everything for 2 seconds 
 
